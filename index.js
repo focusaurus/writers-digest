@@ -30,7 +30,6 @@ var directory = function (dirPath, callback) {
 
 var move = function (inPath, fileName, dirPath, callback) {
   var outPath = path.join(dirPath, fileName);
-  console.log("Storing " + inPath + " at " + outPath);
   fs.rename(inPath, outPath, function (error) {
     callback(error, outPath);
   });
@@ -55,7 +54,7 @@ module.exports = function (filePath, baseDir, callback) {
       async.apply(directory, dirPath),
       async.apply(move, filePath, fileName)
       ], function (error, outPath) {
-        result = {
+        var result = {
           path: outPath,
           digest: hex
         };
