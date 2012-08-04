@@ -1,0 +1,20 @@
+{
+  "name": "writers-digest",
+  "description": "Store files on disk by digest a la .git/objects",
+  "version": "0.0.1",
+  "homepage": "http://github.com/focusaurus/writers-digest",
+  "repository": "ssh://git.peterlyons.com/home/plyons/projects/writers-digest",
+  "author": "Peter Lyons <pete@peterlyons.com> (http://peterlyons.com)",
+  "main": "index.js",
+  "engines": {
+    "node": "0.8.5"
+  },
+  "files": [],
+  "dependencies": {
+    "async": "0.1.15"
+  },
+  "devDependencies": {
+    "chai": "0.1.6",
+    "mocha": "0.10.2"
+  }
+}
