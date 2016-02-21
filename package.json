@@ -1,22 +1,33 @@
 {
-  "name": "writers-digest",
-  "description": "Store files on disk by digest a la .git/objects",
-  "version": "0.0.2",
-  "keywords": ["checksum", "digest", "store", "file"],
-  "homepage": "http://github.com/focusaurus/writers-digest",
-  "repository": {"type": "git", "url": "http://github.com/focusaurus/writers-digest"},
   "author": "Peter Lyons <pete@peterlyons.com> (http://peterlyons.com)",
-  "files": ["tests.js", "index.js", "README.md"],
-  "main": "index.js",
+  "dependencies": {
+    "async": "1.5.2"
+  },
+  "description": "Store files on disk by digest a la .git/objects",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "2.4.5"
+  },
   "engines": {
-    "node": ">=0.6"
+    "node": "4.3.1"
   },
   "files": [],
-  "dependencies": {
-    "async": "0.1.22"
+  "homepage": "http://github.com/focusaurus/writers-digest",
+  "keywords": [
+    "checksum",
+    "digest",
+    "store",
+    "file"
+  ],
+  "license": "MIT",
+  "main": "./writers-digest.js",
+  "name": "writers-digest",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/focusaurus/writers-digest"
   },
-  "devDependencies": {
-    "chai": "1.1.1",
-    "mocha": "1.3.2"
-  }
+  "scripts": {
+    "test": "mocha tests.js"
+  },
+  "version": "0.0.2"
 }
