@@ -35,6 +35,8 @@ store('someFile', function (error, result) {
 })
 ```
 
+[![Build Status](https://semaphoreci.com/api/v1/focusaurus/writers-digest/branches/master/badge.svg)](https://semaphoreci.com/focusaurus/writers-digest)
+
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 # License: MIT License
