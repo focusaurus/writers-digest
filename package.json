@@ -29,5 +29,5 @@
   "scripts": {
     "test": "mocha tests.js"
   },
-  "version": "0.0.2"
+  "version": "1.0.0"
 }
