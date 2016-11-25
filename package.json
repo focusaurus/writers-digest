@@ -6,7 +6,7 @@
   "description": "Store files on disk by digest a la .git/objects",
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "3.1.2"
+    "mocha": "3.2.0"
   },
   "engines": {
     "node": "4.3.1"
