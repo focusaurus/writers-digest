@@ -1,5 +1,7 @@
 # writers-digest
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/focusaurus/writers-digest.svg)](https://greenkeeper.io/)
+
 Store files on disk based on their SHA1 digest the way git does.
 
 Each file is digested with tha Secure Hash Algorithm SHA1 method and stored on disk based on this 40-character hexidecimal value. A parent directory is created based on the first two characters of the digest, and the remaining 38 characters become the filename within that parent directory.
