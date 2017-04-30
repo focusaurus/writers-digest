@@ -1,7 +1,7 @@
 "use strict";
 
 /* eslint-env mocha */
-const assert = require("assert");
+const assert = require("chai").assert;
 const async = require("async");
 const crypto = require("crypto");
 const fs = require("fs");
