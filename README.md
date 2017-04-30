@@ -1,7 +1,5 @@
 # writers-digest
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/focusaurus/writers-digest.svg)](https://greenkeeper.io/)
-
 Store files on disk based on their SHA1 digest the way git does.
 
 Each file is digested with tha Secure Hash Algorithm SHA1 method and stored on disk based on this 40-character hexidecimal value. A parent directory is created based on the first two characters of the digest, and the remaining 38 characters become the filename within that parent directory.
@@ -25,7 +23,7 @@ This module exports a single function with the following parameters:
        - path: full path to the stored file
        - digest: the 40-char hexidecimal SHA1 digest of the file
 
-# Example usage
+## Example usage
 
 ```javascript
 var store = require('writers-digest')
@@ -37,11 +35,15 @@ store('someFile', function (error, result) {
 })
 ```
 
+## Badges
+
 [![Build Status](https://semaphoreci.com/api/v1/focusaurus/writers-digest/branches/master/badge.svg)](https://semaphoreci.com/focusaurus/writers-digest)
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-# License: MIT License
+[![Greenkeeper badge](https://badges.greenkeeper.io/focusaurus/writers-digest.svg)](https://greenkeeper.io/)
+
+## License: MIT License
 
 Copyright (c) 2016 Peter Lyons LLC
 
