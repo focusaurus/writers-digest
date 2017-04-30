@@ -1,50 +1,53 @@
-var async = require("async");
-var crypto = require("crypto");
-var fs = require("fs");
-var path = require("path");
+"use strict";
+const crypto = require("crypto");
+const fs = require("fs");
+const path = require("path");
 
 // TODO
 // recursive mkdir (use module)
 // error handling around file permissions
 // optional parameter for mode of directories created?
 
-var directory = function(dirPath, callback) {
+function directory(dirPath, callback) {
   fs.stat(dirPath, function(error, stat) {
     if (error) {
       if (error.code === "ENOENT") {
         fs.mkdir(dirPath, "0755", function(error) {
-          return callback(error, dirPath);
+          callback(error, dirPath);
+          return;
         });
         return;
       } else {
-        return callback(error);
+        callback(error);
+        return;
       }
     }
     if (!stat.isDirectory()) {
-      var notDir = new Error(
+      const notDir = new Error(
         "File at path '" + dirPath + "' exists but is not a directory"
       );
-      return callback(notDir);
+      callback(notDir);
+      return;
     }
-    return callback(null, dirPath);
+    callback(null, dirPath);
   });
-};
+}
 
-var move = function(inPath, fileName, dirPath, callback) {
-  var outPath = path.join(dirPath, fileName);
+function move(inPath, fileName, dirPath, callback) {
+  const outPath = path.join(dirPath, fileName);
   fs.rename(inPath, outPath, function(error) {
     callback(error, outPath);
   });
-};
+}
 
-module.exports = function(filePath, baseDir, callback) {
+function writersDigest(filePath, baseDir, callback) {
   if (typeof baseDir === "function") {
     // Optional baseDir omitted
     callback = baseDir;
     baseDir = "";
   }
-  var stream = fs.ReadStream(filePath);
-  var digest = crypto.createHash("sha1");
+  const stream = fs.ReadStream(filePath);
+  const digest = crypto.createHash("sha1");
   stream.on("data", function(d) {
     digest.update(d);
   });
@@ -52,19 +55,23 @@ module.exports = function(filePath, baseDir, callback) {
     return callback(error);
   });
   stream.on("end", function() {
-    var hex = digest.digest("hex");
-    var dirName = hex.slice(0, 2);
-    var fileName = hex.slice(2, 40);
-    var dirPath = path.join(baseDir, dirName);
-    async.waterfall(
-      [async.apply(directory, dirPath), async.apply(move, filePath, fileName)],
-      function(error, outPath) {
-        var result = {
+    const hex = digest.digest("hex");
+    const dirName = hex.slice(0, 2);
+    const fileName = hex.slice(2, 40);
+    const dirPath = path.join(baseDir, dirName);
+    directory(dirPath, (error, dirPath) => {
+      if (error) {
+        callback(error);
+        return;
+      }
+      move(filePath, fileName, dirPath, (error, outPath) => {
+        const result = {
           path: outPath,
           digest: hex
         };
         return callback(error, result);
-      }
-    );
+      });
+    });
   });
-};
+}
+module.exports = writersDigest;

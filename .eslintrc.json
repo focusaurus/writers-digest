@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "rules": {
+    "lines-around-directive": "off",
+    "max-len": [
+      "warn",
+      {
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": true,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "no-console": "off",
+    "no-warning-comments": "warn",
+    "strict": [
+      "error",
+      "safe"
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off"
+  }
+}
