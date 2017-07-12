@@ -3,12 +3,12 @@
   "dependencies": {},
   "description": "Store files on disk by digest a la .git/objects",
   "devDependencies": {
-    "async": "2.4.1",
+    "async": "2.5.0",
     "chai": "4.0.2",
-    "eslint": "3.19.0",
+    "eslint": "4.2.0",
     "eslint-config-airbnb-base": "11.2.0",
     "eslint-config-prettier": "2.1.1",
-    "eslint-plugin-import": "2.4.0",
+    "eslint-plugin-import": "2.7.0",
     "mocha": "3.4.2",
     "rimraf": "2.6.1"
   },
