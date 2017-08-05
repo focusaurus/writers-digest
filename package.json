@@ -4,7 +4,7 @@
   "description": "Store files on disk by digest a la .git/objects",
   "devDependencies": {
     "async": "2.5.0",
-    "chai": "4.0.2",
+    "chai": "4.1.1",
     "eslint-config-airbnb-base": "11.3.0",
     "eslint": "4.3.0",
     "eslint-config-prettier": "2.1.1",
