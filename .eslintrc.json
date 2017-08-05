@@ -1,12 +1,9 @@
 {
   "extends": [
-    "airbnb-base",
     "eslint:recommended",
+    "airbnb-base",
     "prettier"
   ],
-  "env": {
-    "node": true
-  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "script"
