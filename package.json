@@ -6,7 +6,7 @@
   "description": "Store files on disk by digest a la .git/objects",
   "devDependencies": {
     "eslint": "4.6.0",
-    "eslint-config-airbnb-base": "11.3.2",
+    "eslint-config-airbnb-base": "12.0.0",
     "eslint-config-prettier": "2.4.0",
     "eslint-plugin-import": "2.7.0",
     "rimraf": "2.6.1",
