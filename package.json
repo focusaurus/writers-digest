@@ -10,7 +10,7 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-import": "2.8.0",
     "rimraf": "2.6.2",
-    "tap": "11.0.0"
+    "tap": "11.0.1"
   },
   "engines": {
     "node": "8"
